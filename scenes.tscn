@@ -1,0 +1,99 @@
+[gd_scene load_steps=14 format=3 uid="uid://dwae0ch7j2d6x"]
+
+[ext_resource type="Texture2D" uid="uid://b6lk5naev0h2g" path="res://assets/player-knight/idle-sheet.png" id="1_a1d52"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jk6o6"]
+size = Vector2(21, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4eqn0"]
+atlas = ExtResource("1_a1d52")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hc5jm"]
+atlas = ExtResource("1_a1d52")
+region = Rect2(32, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vnuj5"]
+atlas = ExtResource("1_a1d52")
+region = Rect2(64, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uf888"]
+atlas = ExtResource("1_a1d52")
+region = Rect2(96, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hirnj"]
+atlas = ExtResource("1_a1d52")
+region = Rect2(128, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_60p1p"]
+atlas = ExtResource("1_a1d52")
+region = Rect2(160, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqhl4"]
+atlas = ExtResource("1_a1d52")
+region = Rect2(192, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1qt0"]
+atlas = ExtResource("1_a1d52")
+region = Rect2(224, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_blaiv"]
+atlas = ExtResource("1_a1d52")
+region = Rect2(256, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oi3iw"]
+atlas = ExtResource("1_a1d52")
+region = Rect2(288, 0, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ljpxl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4eqn0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hc5jm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vnuj5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uf888")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hirnj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_60p1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qqhl4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g1qt0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_blaiv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oi3iw")
+}],
+"loop": true,
+"name": &"player-idle",
+"speed": 6.0
+}]
+
+[node name="word_01" type="Node2D"]
+
+[node name="player-knight" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player-knight"]
+position = Vector2(-1.5, 9)
+shape = SubResource("RectangleShape2D_jk6o6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player-knight"]
+position = Vector2(-1, 4)
+sprite_frames = SubResource("SpriteFrames_ljpxl")
+animation = &"player-idle"
+autoplay = "player-idle"
+frame_progress = 0.838176
